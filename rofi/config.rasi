@@ -1,0 +1,16 @@
+/** Basic config file **/
+
+configuration {
+	show-icons: true;
+	modi: "window,ssh,combi,run,drun,file-browser";
+	font: "Noto Sans Regular 14";
+	combi-modi: "window,ssh,drun,run,file-browser";
+	show-icons: true;
+	theme: "theme";
+	display-combi: " ";
+	display-run: "";
+	display-drun: "";
+	lines: 10;
+	columns: 1;
+	width: 30;
+}

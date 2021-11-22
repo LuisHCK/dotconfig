@@ -10,16 +10,15 @@
 configuration {
 	modi: 			"drun,window";
 	width: 			600;
-	sidebar-mode:   true;
+    sidebar-mode:   true;
 	lines: 			10;
-	show-icons:     true;
+    show-icons:     false;
 	icon-theme: "Papirus";
 	fullscreen: false;
 	show-match: 		false;
 	separator-style: 	"solid";
 	hide-scrollbar: 	true;
-	font: "Noto Sans 12";
-}
+	}
 
 //----------------------
 // Theme Settings 
@@ -151,7 +150,7 @@ case-indicator {
     text-color: @normal-foreground;
 }
 entry {
-    spacing:    0;
+    spcing:    0;
     text-color: @normal-foreground;
 }
 prompt {
@@ -178,4 +177,4 @@ inputbar {
 
 /************************************************
  * Build upon the work of INTRCPTR
- ***********************************************/
+ ***********************************************/a

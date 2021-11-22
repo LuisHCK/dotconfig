@@ -27,14 +27,14 @@ primary = #4c566a
 secondary = #5e81ac
 alert = #bf616a
 
-[bar/example]
+[bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
+height = 30
+;offset-x = 0%
+;offset-y = 0%
+radius = 0.0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,7 +42,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -51,13 +51,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = UbuntuNerdFont:pixelsize=12;
+font-0 = UbuntuNerdFont:pixelsize=12;2
 font-1 = UbuntuNerdFont:fontformat=truetype:size=8:antialias=false;0
 font-2 = UbuntuNerdFont:pixelsize=10;
 
 modules-left = i3
 modules-center = date
-modules-right = alsa pulseaudio eth powermenu
+modules-right = pulseaudio eth powermenu
 
 tray-position = right
 tray-padding = 2
@@ -145,15 +145,14 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-
+label-focused-underline = ${colors.foreground}
 label-focused-padding = 4
+;label-focused-font = 2
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 4
 
-; visible = Active workspace on unfocused monitor
+; visible = Active workspace on unfocused moitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
@@ -258,46 +257,35 @@ label-disconnected-foreground = ${colors.alert}
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 10
+format-margin = 1
 
-date =
-date-alt = " %Y-%m-%d"
+time = "%I:%M %p"
+date = "%d %b"
 
-time = %I:%M %p
-time-alt = %I:%M %p
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %date% %time%
+label = %time% | %date%
+label-background = ${colors.background}
+label-padding = 2
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
-label-volume = 墳
-label-volume-foreground = ${root.foreground}
+format-volume-margin = 2
+format-volume = <ramp-volume><label-volume>
+label-volume = %percentage:4:4%%
+format-volume-background = ${colors.background}
+format-volume-padding = 0
+use-ui-max = false
+interval = 5
 
-label-muted = 婢
-label-muted-foreground = #666
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+
+label-muted = "ﱝ muted"   
+label-muted-background = ${colors.background}
+label-muted-padding = 2
 
 [module/alsa]
 type = internal/alsa
@@ -387,4 +375,4 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-; vim:ft=dosini
+; vim:ft=dosinin

@@ -1,0 +1,16 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json"
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "wxss.validate": false,
+  "stylelintplus.autoFixOnSave": true,
+  "stylelintplus.autoFixOnFormat": true
+}
